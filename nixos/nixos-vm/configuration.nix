@@ -17,6 +17,7 @@
     '';
   };
   
+  
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -29,7 +30,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_5_15;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
@@ -161,8 +162,10 @@
   services.openssh.enable = true;
 
   # Auto-upgrade packages
-  system.autoUpgrade.enable = true;
-
+  system.autoUpgrade = {
+    enable = true;
+    flags = [ "-I" "nixos-config=/home/dcampano/.dotfiles/nixos/nixos-vm/configuration.nix" ];
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
