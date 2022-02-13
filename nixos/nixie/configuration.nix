@@ -13,7 +13,6 @@
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
   nix = {
-    package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -104,6 +103,8 @@
     bc
     libqrencode
     xclip
+    pasystray
+    gnome.networkmanagerapplet
     # end - used for i3/i3blocks
     ack
     i3
