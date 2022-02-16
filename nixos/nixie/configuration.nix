@@ -13,6 +13,8 @@
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
   nix = {
+    package = pkgs.nixFlakes; # or versioned attributes like nix_2_4
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -22,7 +24,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_5_15;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixie"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,6 +51,7 @@
   # };
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -79,7 +82,7 @@
     isNormalUser = true;
     home = "/home/dcampano";
     description = "dcampano";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
     
 
 
