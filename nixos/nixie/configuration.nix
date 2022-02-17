@@ -97,6 +97,7 @@
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+
     # begin - used for i3/i3blocks
     sysstat
     feh
@@ -108,7 +109,12 @@
     xclip
     pasystray
     gnome.networkmanagerapplet
+    # installs python3 along with the i3ipc package
+    # needed for the 'autotiling' extension in
+    # .config/i3/autotiling folder
+    (python39.withPackages(ps: with ps; [ i3ipc ]))
     # end - used for i3/i3blocks
+
     ack
     i3
     # hledger
@@ -132,6 +138,7 @@
     nvd
     git
   ];
+
 
   # Enable apc ups
   services.apcupsd.enable = true;
