@@ -115,6 +115,7 @@
     (python39.withPackages(ps: with ps; [ i3ipc ]))
     # end - used for i3/i3blocks
 
+    direnv
     ack
     i3
     # hledger
