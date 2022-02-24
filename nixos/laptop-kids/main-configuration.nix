@@ -63,9 +63,11 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     chromium
     gnomeExtensions.dash-to-dock
-    gcompris
     wget
     git
+    # Games
+    gcompris
+    gnome.lightsoff
   #   firefox
   ];
 
