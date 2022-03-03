@@ -26,6 +26,10 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 30;
+  };
+
   networking.hostName = "nixie"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
