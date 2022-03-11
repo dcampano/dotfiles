@@ -81,15 +81,11 @@
     ];
   };
 
-
   users.users.dcampano = {
     isNormalUser = true;
     home = "/home/dcampano";
     description = "dcampano";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
-    
-
-
   };
   
   programs.dconf.enable = true;
@@ -144,6 +140,7 @@
     gthumb # To view HEIF/HEIC Files
     nvd
     git
+    git-crypt
   ];
 
 
