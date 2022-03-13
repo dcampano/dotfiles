@@ -141,6 +141,7 @@
     nvd
     git
     git-crypt
+    docker-compose
   ];
 
 
