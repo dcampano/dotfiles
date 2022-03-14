@@ -17,6 +17,7 @@
   users.users.charli = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" ]; # Enable ‘sudo’ for the user.
+    openssh.authorizedKeys.keys = import ./../dcampano-keys.nix;
   };
 
   environment.systemPackages = with pkgs; [
