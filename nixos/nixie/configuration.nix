@@ -142,6 +142,7 @@
     git
     git-crypt
     docker-compose
+    gnumake
   ];
 
 
