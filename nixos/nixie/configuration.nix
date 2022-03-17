@@ -12,6 +12,10 @@
 
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
+  # Using the beta version of this driver to try to fix Chromium issues
+  # Should try to revert back to non beta for the 22.05 release
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+
   nix = {
     package = pkgs.nixFlakes; # or versioned attributes like nix_2_4
 
