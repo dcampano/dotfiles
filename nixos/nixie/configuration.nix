@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -128,7 +130,7 @@
     remmina
     wget
     firefox
-    chromium
+    unstable.chromium # Pull in the latest browser version
     virt-manager
     flatpak
     wireguard
