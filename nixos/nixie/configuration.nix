@@ -221,7 +221,8 @@ in
   # Auto-upgrade packages
   system.autoUpgrade = {
     enable = true;
-    flags = [ "-I" "nixos-config=/home/dcampano/.dotfiles/nixos/nixie/configuration.nix" ];
+    # --upgrade-all is used to update all the root user's channels
+    flags = [ "--upgrade-all" ];
   };
 
   # This value determines the NixOS release from which the default
