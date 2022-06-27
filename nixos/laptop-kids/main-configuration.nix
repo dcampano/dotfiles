@@ -103,6 +103,12 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Auto-upgrade packages
   system.autoUpgrade = {
     enable = true;
