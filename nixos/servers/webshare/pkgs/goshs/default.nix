@@ -1,10 +1,10 @@
 { pkgs ? import <nixpkgs> {} }:
 pkgs.stdenv.mkDerivation rec {
   name = "goshs";
-  version = "0.1.8";
+  version = "0.3.0";
   src = pkgs.fetchzip {
     url = "https://github.com/patrickhener/goshs/releases/download/v${version}/goshs_${version}_Linux_x86_64.tar.gz";
-    sha256 = "00d9gvvrfhrwsic5yixld7wkl1b2dg3ccyyjkgxynvs0s19w8w5g";
+    sha256 = "sha256-WYtV6qGwm1KH2lvzz/QGKFL6FLOKM+1xO9zM9j77+eA=";
     stripRoot = false;
   };
   phases = [ "installPhase" ];
