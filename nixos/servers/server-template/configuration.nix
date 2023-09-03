@@ -20,9 +20,10 @@
     Create a new server with the following steps
 
     1. cd /home/dcampano/.dotfiles/nixos/servers
-    2. Copy the server-template directory
+    2. git pull
+    3. Copy the server-template directory
        cp -r server-templates new-server-name
-    3. Link the new configuration.nix to /etc/nixos/configuration.nix
+    4. Link the new configuration.nix to /etc/nixos/configuration.nix
        ln -s /home/dcampano/.dotfiles/nixos/servers/NEW_SERVER/configuration.nix /etc/nixos/configuration.nix
 
     =====================================================
