@@ -21,6 +21,12 @@
  
     nixos Unifi Network Controller
 
+    To Upgrade The Network Controller Version
+
+    1. cd .dotfiles/nixos/servers/unifi-network-controller
+    2. edit overlays.nix
+    3. sudo nixos-rebuild switch
+
     =====================================================
     
   '';
