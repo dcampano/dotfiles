@@ -30,7 +30,6 @@
   boot.growPartition = true;
 
   networking.hostName = "nixos-iperf3"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.gc = {
     automatic = true;
@@ -60,17 +59,6 @@
   #   firefox
   ];
 
-  systemd.services = {
-    iperf3 = {
-      path = [
-        pkgs.iperf3
-      ];
-      script = "iperf3 -s";
-      wantedBy = ["multi-user.target"];
-    };
-
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -80,6 +68,8 @@
   # };
 
   # List services that you want to enable:
+
+  services.iperf3.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
