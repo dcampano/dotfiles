@@ -7,7 +7,7 @@
 let
   # Set the postgresql version here so that the backup script and the postgresql service
   # can use the same version
-  postgresqlVersionToUse = pkgs.postgresql_14;
+  postgresqlVersionToUse = pkgs.postgresql_15;
 
   custom-backup-script = pkgs.writeShellScriptBin "backup-databases.sh" ''
     set -euo pipefail
